@@ -1,1 +1,11 @@
-<p>login works!</p>
+<form #loginform = "ngForm" (ngSubmit)="dologin(loginform)">
+
+<label for="userId">User id:</label>
+<input type="text" id="userId" name="userId" required email ngModel>
+
+<label for="password">Password :</label>
+<input type="password" id="password" name="password" required minlength="8" ngModel>
+
+<button type="submit">Connetti</button>
+
+</form>
