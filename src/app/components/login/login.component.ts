@@ -9,25 +9,32 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
+  autenticato: Boolean=false;
+  errMsg : string = "Spiacente,la userid e/o la password sono errati!";
+/*constructor(private router:Router){
 
-constructor(private router:Router){
-
-}
+}*/
 
 ngOnInit(): void {
 
 }
 
 public dologin(form:NgForm) : void {
+
+
 if (form.valid){
   if (form.value.userId=="pippo" && form.value.password=="password"){
-    AuthService.setLogin();
-    this.router.navigate(["paginaPrivata"])
+    this.autenticato = true
+  }
+    else
+    this.autenticato = false
+
+    /*AuthService.setLogin();
+    this.router.navigate(["paginaPrivata"])*/
   }
 }
-}
-public logout(): void{
+/*public logout(): void{
   AuthService.logout();
   this.router.navigate(["homePage"])
-}
+}*/
 }
