@@ -9,3 +9,11 @@
 <button type="submit">Connetti</button>
 
 </form>
+
+<div *ngIf!="autenticato">
+    {{ errMsg }}
+</div>
+
+<div *ngIf="consentito">
+    {{ okMsg }}
+</div>
